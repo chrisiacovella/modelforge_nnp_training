@@ -1,0 +1,27 @@
+{{ experiment_base_name }}
+===========================
+
+ * Dataset : {{ dataset_name }}
+ * Potential : {{ potential_name }}
+
+Description:
+------------
+
+{{ description }}
+
+Experiments:
+------------
+
+{% for exp in experiments.values() %}
+- {{ exp.experiment_name }}
+  - Modelforge Configuration file: [exp.config_file](./{{ exp.config_file }})
+  {% for loss, val in exp.loss_weights.items() %}
+  - loss component: `{{loss}}` : weight = {{ val }}
+    - MSE of test set: [[ ]]
+    - RMSE of test set: [[ ]]
+  {% endfor %}
+  - WandB link: [[ ]]
+{% endfor %}
+
+
+
