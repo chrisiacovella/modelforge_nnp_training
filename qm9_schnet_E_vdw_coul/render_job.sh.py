@@ -59,10 +59,10 @@ if __name__ == "__main__":
         ## define training parameters
         training_parameters = {
             "dataset_splitting_seed": dataset_set,
-            "project": "project_name",
-            "group": "group",
-            "tags": ["tags"],
-            "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Coul + VDW",
+            "project": "modelforge_nnp_training",
+            "group": "qm_schnet",
+            "tags": ["qm9", "schnet", "energy", "coul", "vdw"],
+            "notes": f"{run_id}; training of {potential_name} on {dataset_name} with E, coul, vdw",
         }
 
         ## define runtime parameters
