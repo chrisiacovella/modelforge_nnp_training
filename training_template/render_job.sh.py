@@ -61,7 +61,7 @@ if __name__ == "__main__":
             "dataset_splitting_seed": dataset_set,
             "project": "project_name",
             "group": "group",
-            "tags": "['tags']",
+            "tags": ["tags"],
             "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Coul + VDW",
         }
 

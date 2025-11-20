@@ -82,7 +82,7 @@ project = "modelforge_nnp_training"
 group = "qm_schnet"
 log_model = true
 job_type = "benchmarking"
-tags = "['qm9','schnet','energy']"
+tags = ['qm9', 'schnet', 'energy']
 notes = "ps123_ds42; training of schnet on qm9 with energy only"
 # ------------------------------------------------------------ #
 [training.lr_scheduler]

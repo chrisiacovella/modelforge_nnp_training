@@ -57,7 +57,7 @@ if __name__ == "__main__":
             "dataset_splitting_seed": dataset_set,
             "project": "modelforge_nnp_training",
             "group": "qm_schnet",
-            "tags": "['qm9','schnet','energy']",
+            "tags": ["qm9", "schnet", "energy"],
             "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy only",
         }
 
