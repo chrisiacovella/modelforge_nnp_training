@@ -107,7 +107,7 @@ if __name__ == "__main__":
             f.write(condensed_config)
 
         python_cmd = (
-            f"python ../../modelforge/scripts/perform_training.py "
+            f"python ../../../modelforge/scripts/perform_training.py "
             f"--condensed_config_path config_{run_id}.toml "
             f"--accelerator 'gpu' --device [0]"
         )
