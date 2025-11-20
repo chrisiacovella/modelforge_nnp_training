@@ -30,5 +30,5 @@ micromamba activate test
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
 pwd
-echo {{ python_cmd }}
+echo "{{ python_cmd }}"
 srun {{ python_cmd }}

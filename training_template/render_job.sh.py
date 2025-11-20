@@ -123,6 +123,7 @@ if __name__ == "__main__":
                 "job_name": f"{run_id}_{dataset_name}_{potential_name}",
                 "python_cmd": python_cmd,
             },
+            add_quotes=False,
         )
         submit_slurm = f"submit_slurm_{run_id}.sh"
         file_names.append(submit_slurm)
