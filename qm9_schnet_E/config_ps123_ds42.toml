@@ -72,7 +72,7 @@ monitor = "val/per_system_energy/rmse"
 shift_center_of_mass_to_origin = true
 log_norm = false
 plot_frequency = 1
-gradient_clip = 5
+gradient_clip_val = 5
 # ------------------------------------------------------------ #
 [training.experiment_logger]
 logger_name = "wandb"
@@ -82,7 +82,7 @@ project = "modelforge_nnp_training"
 group = "qm_schnet"
 log_model = true
 job_type = "benchmarking"
-tags = "qm9,schnet,energy"
+tags = "['qm9','schnet','energy']"
 notes = "ps123_ds42; training of schnet on qm9 with energy only"
 # ------------------------------------------------------------ #
 [training.lr_scheduler]

@@ -57,7 +57,7 @@ if __name__ == "__main__":
             "dataset_splitting_seed": dataset_set,
             "project": "modelforge_nnp_training",
             "group": "qm_schnet",
-            "tags": "qm9,schnet,energy",
+            "tags": "['qm9','schnet','energy']",
             "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy only",
         }
 
@@ -107,7 +107,7 @@ if __name__ == "__main__":
             f.write(condensed_config)
 
         python_cmd = (
-            f"python ../../../modelforge/scripts/perform_training.py "
+            f"python ../../modelforge/scripts/perform_training.py "
             f"--condensed_config_path config_{run_id}.toml "
             f"--accelerator 'gpu' --device [0]"
         )

@@ -61,7 +61,7 @@ if __name__ == "__main__":
             "dataset_splitting_seed": dataset_set,
             "project": "project_name",
             "group": "group",
-            "tags": "tags",
+            "tags": "['tags']",
             "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Coul + VDW",
         }
 
@@ -111,7 +111,7 @@ if __name__ == "__main__":
             f.write(condensed_config)
 
         python_cmd = (
-            f"python ../../../modelforge/scripts/perform_training.py "
+            f"python ../../modelforge/scripts/perform_training.py "
             f"--condensed_config_path config_{run_id}.toml "
             f"--accelerator 'gpu' --device [0]"
         )
