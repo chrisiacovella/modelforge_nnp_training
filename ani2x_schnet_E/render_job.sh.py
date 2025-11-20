@@ -26,9 +26,9 @@ if __name__ == "__main__":
     readme_template = "README.jinja"
 
     # these will be used when writing out the experiment name
-    dataset_name = "qm9"
+    dataset_name = "ani2x"
     potential_name = "schnet"
-    experiment_base_name = f"{dataset_name}_{potential_name}_coul_vdw"
+    experiment_base_name = f"{dataset_name}_{potential_name}_E"
 
     description = (
         "Training of the SchNet potential on the QM9 dataset. "
@@ -63,14 +63,8 @@ if __name__ == "__main__":
                 "shift_energies": shift_energies,
                 "project": "modelforge_nnp_training",
                 "group": f"{dataset_name}_{potential_name}",
-                "tags": [
-                    f"{dataset_name}",
-                    f"{potential_name}",
-                    "energy",
-                    "coul",
-                    "vdw",
-                ],
-                "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Coul + VDW",
+                "tags": [f"{dataset_name}", f"{potential_name}", "energy"],
+                "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Energy",
             }
 
             ## define runtime parameters

@@ -1,0 +1,117 @@
+# ============================================================ #
+
+[dataset]
+dataset_name = "ani2x"
+version_select = "full_dataset_v1.1"
+num_workers = 4
+pin_memory = true
+properties_of_interest = ["atomic_numbers", "positions", "energy",]
+element_filter = []
+dataset_cache_dir = "../dataset_cache_dir"
+# ------------------------------------------------------------ #
+[dataset.properties_assignment]
+atomic_numbers = "atomic_numbers"
+positions = "positions"
+E = "energy"
+
+# ============================================================ #
+
+[potential]
+potential_name = "SchNet"
+potential_seed = 124
+# ------------------------------------------------------------ #
+[potential.core_parameter]
+number_of_radial_basis_functions = 64
+maximum_interaction_radius = "5.0 angstrom"
+number_of_interaction_modules = 6
+number_of_filters = 128
+shared_interactions = true
+predicted_properties = ["per_atom_energy"]
+predicted_dim = [1]
+# ------------------------------------------------------------ #
+[potential.core_parameter.activation_function_parameter]
+activation_function_name = "ShiftedSoftplus"
+[potential.core_parameter.featurization]
+properties_to_featurize = ['atomic_number']
+# ------------------------------------------------------------ #
+[potential.core_parameter.featurization.atomic_number]
+maximum_atomic_number = 101
+number_of_per_atom_features = 128
+# ------------------------------------------------------------ #
+[potential.postprocessing_parameter]
+properties_to_process = ['per_atom_energy']
+# ------------------------------------------------------------ #
+[potential.postprocessing_parameter.per_atom_energy]
+normalize = true
+from_atom_to_system_reduction = true
+keep_per_atom_property = true
+
+# ============================================================ #
+
+[runtime]
+save_dir = "lightning_logs"
+experiment_name = "ani2x_schnet_E_ps124_ds43_mean"
+local_cache_dir = "./cache_ps124_ds43_mean"
+accelerator = "gpu"
+number_of_nodes = 1
+devices = [0]                                        #[0,1,2,3]
+checkpoint_path = "None"
+simulation_environment = "PyTorch"
+log_every_n_steps = 10
+verbose = false
+
+# ============================================================ #
+
+[training]
+number_of_epochs = 500
+remove_self_energies = true
+shift_energies = "mean"
+batch_size = 128
+lr = 5e-4
+monitor = "val/per_system_energy/rmse"
+shift_center_of_mass_to_origin = true
+log_norm = false
+plot_frequency = 1
+gradient_clip_val = 5
+# ------------------------------------------------------------ #
+[training.experiment_logger]
+logger_name = "wandb"
+[training.experiment_logger.wandb_configuration]
+save_dir = "logs"
+project = "modelforge_nnp_training"
+group = "ani2x_schnet"
+log_model = true
+job_type = "benchmarking"
+tags = ['ani2x', 'schnet', 'energy']
+notes = "ps124_ds43_mean; training of schnet on ani2x with Energy"
+# ------------------------------------------------------------ #
+[training.lr_scheduler]
+scheduler_name = "ReduceLROnPlateau"
+frequency = 1
+mode = "min"
+monitor = "val/per_system_energy/rmse"
+factor = 0.5
+patience = 10
+cooldown = 15
+min_lr = 1e-6
+threshold = 0.1
+threshold_mode = "abs"
+interval = "epoch"
+# ------------------------------------------------------------ #
+[training.loss_parameter]
+loss_components = ['per_atom_energy']
+[training.loss_parameter.weight]
+per_atom_energy = 1.0
+# ------------------------------------------------------------ #
+[training.early_stopping]
+verbose = true
+min_delta = 0.1
+patience = 50
+# ------------------------------------------------------------ #
+[training.splitting_strategy]
+name = "random_record_splitting_strategy"
+data_split = [0.8, 0.1, 0.1]
+seed = 43
+# ------------------------------------------------------------ #
+
+# ============================================================ #
