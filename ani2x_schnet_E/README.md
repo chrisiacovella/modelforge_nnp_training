@@ -18,7 +18,7 @@ Experiments:
   - Energy shifting: 
   
   - loss component: `per_atom_energy` : weight = 1.0
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
   - WandB link: [[ ]]
@@ -28,7 +28,7 @@ Experiments:
   - Energy shifting: 
   
   - loss component: `per_atom_energy` : weight = 1.0
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
   - WandB link: [[ ]]
@@ -38,7 +38,7 @@ Experiments:
   - Energy shifting: 
   
   - loss component: `per_atom_energy` : weight = 1.0
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
   - WandB link: [[ ]]
@@ -48,7 +48,7 @@ Experiments:
   - Energy shifting: 
   
   - loss component: `per_atom_energy` : weight = 1.0
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
   - WandB link: [[ ]]
@@ -58,7 +58,7 @@ Experiments:
   - Energy shifting: 
   
   - loss component: `per_atom_energy` : weight = 1.0
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
   - WandB link: [[ ]]

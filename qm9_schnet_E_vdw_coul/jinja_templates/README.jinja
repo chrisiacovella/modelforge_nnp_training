@@ -17,7 +17,7 @@ Experiments:
   - Modelforge Configuration file: [exp.config_file](./{{ exp.config_file }})
   {% for loss, val in exp.loss_weights.items() %}
   - loss component: `{{loss}}` : weight = {{ val }}
-    - MSE of test set: [[ ]]
+    - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   {% endfor %}
   - WandB link: [[ ]]

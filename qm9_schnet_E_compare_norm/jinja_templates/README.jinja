@@ -15,7 +15,8 @@ Experiments:
 {% for exp in experiments.values() %}
 - {{ exp.experiment_name }}
   - Modelforge Configuration file: [exp.config_file](./{{ exp.config_file }})
-  - Energy shifting: {{ exp.energy_shifting }}
+  - per_atom_energy normalization: {{ exp.normalize }}
+  - initial learning rate: {{ exp.initial_lr }}
   {% for loss, val in exp.loss_weights.items() %}
   - loss component: `{{loss}}` : weight = {{ val }}
     - MAE of test set: [[ ]]
