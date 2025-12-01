@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sbatch submit_slurm_ps123_ds42_lr0.001_normFalse_shiftmean.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normFalse_shiftmean.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normFalse_shiftmean.sh
+sbatch submit_slurm_ps123_ds42_lr0.001_normFalse_shiftmin.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normFalse_shiftmin.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normFalse_shiftmin.sh
+sbatch submit_slurm_ps123_ds42_lr0.001_normFalse_shiftmax.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normFalse_shiftmax.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normFalse_shiftmax.sh
