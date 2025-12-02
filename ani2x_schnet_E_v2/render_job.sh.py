@@ -26,9 +26,9 @@ if __name__ == "__main__":
     readme_template = "README.jinja"
 
     # these will be used when writing out the experiment name
-    dataset_name = "qm9"
+    dataset_name = "ani2x"
     potential_name = "schnet"
-    experiment_base_name = f"{dataset_name}_{potential_name}_coul_vdw"
+    experiment_base_name = f"{dataset_name}_{potential_name}_E"
 
     description = (
         "Training of the SchNet potential on the QM9 dataset. "
@@ -45,11 +45,11 @@ if __name__ == "__main__":
 
     file_names = []
     experiments = {}
-    for shift_energies in ["max", "mean", "min"]:
+    for learning_rate in [0.001, 0.0009, 0.0005]:
         for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
 
             # create a run_id based on the seeds, used for defining the local cache dir
-            run_id = f"ps{potential_seed}_ds{dataset_set}_{shift_energies}"
+            run_id = f"ps{potential_seed}_ds{dataset_set}_lr{learning_rate}"
 
             ## define dataset parameters
             dataset_parameters = {"dataset_cache_dir": "../dataset_cache_dir"}
@@ -60,17 +60,11 @@ if __name__ == "__main__":
             ## define training parameters
             training_parameters = {
                 "dataset_splitting_seed": dataset_set,
-                "shift_energies": shift_energies,
+                "learning_rate": learning_rate,
                 "project": "modelforge_nnp_training",
                 "group": f"{dataset_name}_{potential_name}",
-                "tags": [
-                    f"{dataset_name}",
-                    f"{potential_name}",
-                    "energy",
-                    "coul",
-                    "vdw",
-                ],
-                "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Coul + VDW",
+                "tags": [f"{dataset_name}", f"{potential_name}", "energy"],
+                "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Energy",
             }
 
             ## define runtime parameters
@@ -128,7 +122,7 @@ if __name__ == "__main__":
                 env,
                 slurm_template,
                 {
-                    "job_name": f"{run_id}_{dataset_name}_{potential_name}_{shift_energies}",
+                    "job_name": f"{run_id}_{dataset_name}_{potential_name}_{learning_rate}",
                     "python_cmd": python_cmd,
                 },
                 add_quotes=False,
@@ -162,7 +156,7 @@ if __name__ == "__main__":
                 "config_file": condensed_config_file,
                 "loss_components": loss_components,
                 "loss_weights": loss_weights,
-                "shift_energies": shift_energies,
+                "learning_rate": learning_rate,
             }
 
     # auto generate the README file using the
