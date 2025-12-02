@@ -62,7 +62,7 @@ if __name__ == "__main__":
                 "dataset_splitting_seed": dataset_set,
                 "learning_rate": learning_rate,
                 "project": "modelforge_nnp_training",
-                "group": f"{dataset_name}_{potential_name}",
+                "group": f"{dataset_name}_{potential_name}_E",
                 "tags": [f"{dataset_name}", f"{potential_name}", "energy"],
                 "notes": f"{run_id}; training of {potential_name} on {dataset_name} with Energy",
             }

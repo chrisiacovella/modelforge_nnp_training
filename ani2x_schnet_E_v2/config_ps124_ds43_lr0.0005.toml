@@ -78,7 +78,7 @@ logger_name = "wandb"
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
 project = "modelforge_nnp_training"
-group = "ani2x_schnet"
+group = "ani2x_schnet_E"
 log_model = true
 job_type = "benchmarking"
 tags = ['ani2x', 'schnet', 'energy']
