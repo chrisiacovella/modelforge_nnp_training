@@ -18,7 +18,7 @@ E = "energies"
 
 [potential]
 potential_name = "SchNet"
-potential_seed = 123
+potential_seed = 126
 # ------------------------------------------------------------ #
 [potential.core_parameter]
 number_of_radial_basis_functions = 64
@@ -50,8 +50,8 @@ keep_per_atom_property = true
 
 [runtime]
 save_dir = "lightning_logs"
-experiment_name = "ani2x_schnet_E_ps123_ds42_lr0.0009"
-local_cache_dir = "./cache_ps123_ds42_lr0.0009"
+experiment_name = "ani2x_schnet_E_ps126_ds45_lr0.001"
+local_cache_dir = "./cache_ps126_ds45_lr0.001"
 accelerator = "gpu"
 number_of_nodes = 1
 devices = [0]                                        #[0,1,2,3]
@@ -66,7 +66,7 @@ verbose = false
 number_of_epochs = 500
 remove_self_energies = true
 batch_size = 128
-lr = 0.0009
+lr = 0.001
 monitor = "val/per_system_energy/rmse"
 shift_center_of_mass_to_origin = true
 log_norm = false
@@ -82,7 +82,7 @@ group = "ani2x_schnet_E"
 log_model = true
 job_type = "benchmarking"
 tags = ['ani2x', 'schnet', 'energy']
-notes = "ps123_ds42_lr0.0009; training of schnet on ani2x with Energy"
+notes = "ps126_ds45_lr0.001; training of schnet on ani2x with Energy"
 # ------------------------------------------------------------ #
 [training.lr_scheduler]
 scheduler_name = "ReduceLROnPlateau"
@@ -110,7 +110,7 @@ patience = 50
 [training.splitting_strategy]
 name = "random_record_splitting_strategy"
 data_split = [0.8, 0.1, 0.1]
-seed = 42
+seed = 45
 # ------------------------------------------------------------ #
 
 # ============================================================ #

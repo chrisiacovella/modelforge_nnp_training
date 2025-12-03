@@ -31,13 +31,8 @@ if __name__ == "__main__":
     experiment_base_name = f"{dataset_name}_{potential_name}_E"
 
     description = (
-        "Training of the SchNet potential on the QM9 dataset. "
-        "This additionally predicts the partial charges on each atom. "
-        "Local interactions are computed with a cutoff of 5 Å. "
-        "van der Waals interactions are computed using the DFT-D3 method with a cutoff of 15 Å. "
-        "The partial charges are used to compute the Coulombic interaction between particles with cutoff of 15 Å. "
-        "The training includes loss terms for the total system energy, which includes van der Waals and Coulombic energy "
-        "contributions (`per_system_energy`) and partial charges (`per_atom_charge`)."
+        "Training of the SchNet potential on the ani2x dataset with 5 angstrom cutoff. "
+        "Only per-system energy appears in the loss function. "
     )
 
     # in general we will want to run multiple versions of the same basic configuration to have multiple replicates
@@ -45,8 +40,8 @@ if __name__ == "__main__":
 
     file_names = []
     experiments = {}
-    for learning_rate in [0.001, 0.0009, 0.0005]:
-        for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
+    for learning_rate in [0.001]:
+        for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44), (126, 45)]:
 
             # create a run_id based on the seeds, used for defining the local cache dir
             run_id = f"ps{potential_seed}_ds{dataset_set}_lr{learning_rate}"

@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=ps123_ds42_lr0.0005_ani2x_schnet_0.0005
+#SBATCH --job-name=ps126_ds45_lr0.001_ani2x_schnet_0.001
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=64G
 #SBATCH --gres=gpu:1
-#SBATCH --time=24:00:00
+#SBATCH --time=7-00:00:00
 #SBATCH --output=slurm_out/%j_%x_%N.out
 #SBATCH --error=slurm_err/%j_%x_%N.err
 
@@ -30,5 +30,5 @@ micromamba activate test
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
 pwd
-echo "python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps123_ds42_lr0.0005.toml --accelerator 'gpu' --device [0]"
-srun python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps123_ds42_lr0.0005.toml --accelerator 'gpu' --device [0]
+echo "python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps126_ds45_lr0.001.toml --accelerator 'gpu' --device [0]"
+srun python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps126_ds45_lr0.001.toml --accelerator 'gpu' --device [0]
