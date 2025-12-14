@@ -1,7 +1,7 @@
 # ============================================================ #
 
 [dataset]
-dataset_name = "qm9"
+dataset_name = "tmqm_openff_local"
 version_select = "sm_1_n_configs_10_random_overlap_v1.3"
 num_workers = 4
 pin_memory = true
