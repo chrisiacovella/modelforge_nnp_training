@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sbatch submit_slurm_sm_1_n_configs_1_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_2_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_5_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_10_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_20_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_30_random_overlap_v1.3_ps123_ds42.sh
+sbatch submit_slurm_sm_1_n_configs_40_random_overlap_v1.3_ps123_ds42.sh
