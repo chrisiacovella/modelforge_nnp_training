@@ -69,7 +69,7 @@ if __name__ == "__main__":
             training_parameters = {
                 "dataset_splitting_seed": dataset_set,
                 "project": "modelforge_nnp_training",
-                "group": f"{dataset_name}_{potential_name}_F4",
+                "group": f"{dataset_name}_{potential_name}_b32_F4",
                 "tags": [
                     f"{dataset_name}",
                     f"{potential_name}",
