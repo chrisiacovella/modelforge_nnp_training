@@ -2,7 +2,7 @@
 
 [dataset]
 dataset_name = "tmqm_openff_local"
-version_select = "sm_5_n_configs_1_start_all_v1.3"
+version_select = "sm_5_n_configs_2_random_overlap_v1.3"
 num_workers = 4
 pin_memory = true
 properties_of_interest = ["atomic_numbers", "positions", "dft_total_energy", "dft_total_energy_corrected", "scf_dipole", "total_charge", "lowdin_partial_charges", "mulliken_partial_charges", "per_system_spin_multiplicity"]
@@ -68,8 +68,8 @@ contributions = ['per_system_electrostatic_energy', 'per_system_vdw_energy']
 
 [runtime]
 save_dir = "lightning_logs"
-experiment_name = "tmqm_openff_sm_1_n_configs_1_start_all_v1.3_ps125_ds44"
-local_cache_dir = "./cache_sm_1_n_configs_1_start_all_v1.3_ps125_ds44"
+experiment_name = "tmqm_openff_sm_5_n_configs_2_random_overlap_v1.3_ps124_ds43"
+local_cache_dir = "./cache_sm_5_n_configs_2_random_overlap_v1.3_ps124_ds43"
 accelerator = "gpu"
 number_of_nodes = 1
 devices = [0]                                        #[0,1,2,3]
@@ -96,11 +96,11 @@ logger_name = "wandb"
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
 project = "modelforge_nnp_training"
-group = "tmqm_openff_aimnet2_start_all"
+group = "tmqm_openff_aimnet2_n_random_overlap_sm5_v1"
 log_model = true
 job_type = "benchmarking"
-tags = ['tmqm_openff', 'aimnet2', 'sm_1_n_configs_1_start_all_v1.3start', 'all']
-notes = "sm_1_n_configs_1_start_all_v1.3_ps125_ds44; training of aimnet2 on tmqm_openff with version sm_1_n_configs_1_start_all_v1.3"
+tags = ['tmqm_openff', 'aimnet2', 'sm_5_n_configs_2_random_overlap_v1.3', 'sm5random', 'overlap', 'v1']
+notes = "sm_5_n_configs_2_random_overlap_v1.3_ps124_ds43; training of aimnet2 on tmqm_openff with version sm_5_n_configs_2_random_overlap_v1.3"
 # ------------------------------------------------------------ #
 [training.lr_scheduler]
 scheduler_name = "ReduceLROnPlateau"
@@ -130,7 +130,7 @@ patience = 50
 [training.splitting_strategy]
 name = "random_record_splitting_strategy"
 data_split = [0.8, 0.1, 0.1]
-seed = 44
+seed = 43
 # ------------------------------------------------------------ #
 
 # ============================================================ #

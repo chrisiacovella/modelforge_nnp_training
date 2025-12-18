@@ -30,7 +30,7 @@ if __name__ == "__main__":
     potential_name = "aimnet2"
     experiment_base_name = f"{dataset_name}"
 
-    description = "Training of aimnet2 with tmqm_openff looking at data sacaling"
+    description = "Training of aimnet2 with tmqm_openff looking at data scaling for sm=5 with random configuration selection and overlap between the original and extended dataset."
 
     # in general we will want to run multiple versions of the same basic configuration to have multiple replicates
     # we will loop over potential parameters seeds and dataset splitting seeds
@@ -39,13 +39,13 @@ if __name__ == "__main__":
     experiments = {}
 
     versions = [
-        "sm_1_n_configs_1_random_overlap_v1.3",
-        "sm_1_n_configs_2_random_overlap_v1.3",
-        "sm_1_n_configs_5_random_overlap_v1.3",
-        "sm_1_n_configs_10_random_overlap_v1.3",
-        "sm_1_n_configs_20_random_overlap_v1.3",
-        "sm_1_n_configs_30_random_overlap_v1.3",
-        "sm_1_n_configs_40_random_overlap_v1.3",
+        "sm_5_n_configs_1_random_overlap_v1.3",
+        "sm_5_n_configs_2_random_overlap_v1.3",
+        "sm_5_n_configs_5_random_overlap_v1.3",
+        "sm_5_n_configs_10_random_overlap_v1.3",
+        "sm_5_n_configs_20_random_overlap_v1.3",
+        "sm_5_n_configs_30_random_overlap_v1.3",
+        "sm_5_n_configs_40_random_overlap_v1.3",
     ]
 
     for version_select in versions:
@@ -67,11 +67,14 @@ if __name__ == "__main__":
             training_parameters = {
                 "dataset_splitting_seed": dataset_set,
                 "project": "modelforge_nnp_training",
-                "group": f"{dataset_name}_{potential_name}",
+                "group": f"{dataset_name}_{potential_name}_n_random_overlap_sm5_v1",
                 "tags": [
                     f"{dataset_name}",
                     f"{potential_name}",
                     f"{version_select}",
+                    "sm5" "random",
+                    "overlap",
+                    "v1",
                 ],
                 "notes": f"{run_id}; training of {potential_name} on {dataset_name} with version {version_select}",
             }
