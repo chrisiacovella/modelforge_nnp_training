@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
             ## define dataset parameters
             dataset_parameters = {
-                "dataset_cache_dir": "../../datasets",
+                "dataset_cache_dir": "/data1/choderaj/iacovec/training_test/dataset",
                 "version_select": version_select,
             }
 
@@ -61,11 +61,11 @@ if __name__ == "__main__":
             training_parameters = {
                 "dataset_splitting_seed": dataset_set,
                 "project": "modelforge_nnp_training",
-                "group": f"{dataset_name}_{potential_name}_start_all",
+                "group": f"{dataset_name}_{potential_name}_all",
                 "tags": [
                     f"{dataset_name}",
                     f"{potential_name}",
-                    f"{version_select}" "start",
+                    f"{version_select}",
                     "all",
                 ],
                 "notes": f"{run_id}; training of {potential_name} on {dataset_name} with version {version_select}",
