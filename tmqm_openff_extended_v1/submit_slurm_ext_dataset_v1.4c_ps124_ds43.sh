@@ -30,5 +30,5 @@ micromamba activate modelforge
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
 pwd
-echo "python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ext_dataset_v1.4c_ps124_ds43.toml --accelerator 'gpu' --device [0]"
-srun python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ext_dataset_v1.4c_ps124_ds43.toml --accelerator 'gpu' --device [0]
+echo "python /data1/choderaj/iacovec/modelforge/scripts/perform_training.py --condensed_config_path config_ext_dataset_v1.4c_ps124_ds43.toml --accelerator 'gpu' --device [0]"
+srun python /data1/choderaj/iacovec/modelforge/scripts/perform_training.py --condensed_config_path config_ext_dataset_v1.4c_ps124_ds43.toml --accelerator 'gpu' --device [0]
