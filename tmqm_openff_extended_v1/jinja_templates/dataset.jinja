@@ -1,0 +1,19 @@
+[dataset]
+dataset_name = "tmqm_openff_local"
+version_select = {{ version_select }}
+num_workers = 4
+pin_memory = true
+properties_of_interest = ["atomic_numbers", "positions", "dft_total_force", "dft_total_energy", "dft_total_energy_corrected", "scf_dipole", "total_charge", "lowdin_partial_charges", "mulliken_partial_charges", "per_system_spin_multiplicity"]
+element_filter = []
+local_yaml_file = "/data1/choderaj/iacovec/datasets//local_datasets.yaml"
+dataset_cache_dir = {{ dataset_cache_dir }}
+# ------------------------------------------------------------ #
+[dataset.properties_assignment]
+atomic_numbers = "atomic_numbers"
+positions = "positions"
+E = "dft_total_energy_corrected"
+F = "dft_total_force"
+dipole_moment = "scf_dipole"
+partial_charges = "lowdin_partial_charges"
+total_charge= "total_charge"
+spin_multiplicity="per_system_spin_multiplicity"
