@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=64G
 #SBATCH --gres=gpu:a100:1
-#SBATCH --time=6:00:00
+#SBATCH --time=3-00:00:00
 #SBATCH --output=slurm_out/%j_%x_%N.out
 #SBATCH --error=slurm_err/%j_%x_%N.err
 
@@ -25,7 +25,7 @@ env | sort | grep 'CUDA'
 nvidia-smi
 
 # Activate environment
-micromamba activate test
+micromamba activate modelforge
 
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
