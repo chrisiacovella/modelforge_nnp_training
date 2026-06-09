@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sbatch submit_slurm_ext_dataset_v1.4c_ps1234_ds425_fl0.001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1245_ds435_fl0.001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1255_ds445_fl0.001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1234_ds425_fl0.0001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1245_ds435_fl0.0001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1255_ds445_fl0.0001.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1234_ds425_fl1e-05.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1245_ds435_fl1e-05.sh
+sbatch submit_slurm_ext_dataset_v1.4c_ps1255_ds445_fl1e-05.sh
