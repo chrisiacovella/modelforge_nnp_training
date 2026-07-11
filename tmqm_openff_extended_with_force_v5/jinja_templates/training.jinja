@@ -1,7 +1,7 @@
 [training]
 number_of_epochs = 500
 remove_self_energies = false
-batch_size = 128
+batch_size = 32
 lr = {{learning_rate}}
 monitor = "val/per_system_energy/rmse"
 shift_center_of_mass_to_origin = true
@@ -37,7 +37,7 @@ interval = "epoch"
 loss_components = ['per_system_energy', 'per_system_dipole_moment', 'per_atom_charge', 'per_atom_force']
 [training.loss_parameter.weight]
 per_system_energy = 0.01
-per_system_dipole_moment = 1
+per_system_dipole_moment = 5.0
 per_atom_charge = 0.1
 per_atom_force = {{ per_atom_force_loss_weight }}
 # ------------------------------------------------------------ #
