@@ -1,0 +1,32 @@
+#!/bin/bash
+
+sbatch submit_slurm_ps123_ds42_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.002_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.002_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.002_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.001_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.0001_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.0001_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.0001_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps123_ds42_lr0.002_normFalse.sh
+sbatch submit_slurm_ps124_ds43_lr0.002_normFalse.sh
+sbatch submit_slurm_ps125_ds44_lr0.002_normFalse.sh
+sbatch submit_slurm_ps123_ds42_lr0.001_normFalse.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normFalse.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normFalse.sh
+sbatch submit_slurm_ps123_ds42_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normFalse.sh
+sbatch submit_slurm_ps123_ds42_lr0.0001_normFalse.sh
+sbatch submit_slurm_ps124_ds43_lr0.0001_normFalse.sh
+sbatch submit_slurm_ps125_ds44_lr0.0001_normFalse.sh
