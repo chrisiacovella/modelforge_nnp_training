@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name={{ job_name }}
+#SBATCH --job-name=ps124_ds43_lr0.005_normTrue_rbf128_qm9_schnet
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -30,5 +30,5 @@ micromamba activate modelforge
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
 pwd
-echo "{{ python_cmd }}"
-srun {{ python_cmd }}
+echo "python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps124_ds43_lr0.005_normTrue_rbf128.toml --accelerator 'gpu' --device [0]"
+srun python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps124_ds43_lr0.005_normTrue_rbf128.toml --accelerator 'gpu' --device [0]
