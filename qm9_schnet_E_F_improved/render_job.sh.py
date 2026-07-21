@@ -68,10 +68,10 @@ if __name__ == "__main__":
                     ## define training parameters
                     training_parameters = {
                         "dataset_splitting_seed": dataset_set,
-                        "project": "qm9_schnet_original",
+                        "project": "qm9_schnet_improved",
                         "group": "qm_schnet_normTrue",
                         "tags": ["qm9", "schnet", "energy", "force", f"norm_{str(normalize)}"],
-                        "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and force",
+                        "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and force and {radial_basis_functions} radial_basis functions",
                         "initial_lr": initial_lr,
                     }
 

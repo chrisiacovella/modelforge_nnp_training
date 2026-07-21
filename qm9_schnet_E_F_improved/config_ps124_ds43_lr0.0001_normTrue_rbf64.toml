@@ -77,12 +77,12 @@ gradient_clip_val = 5
 logger_name = "wandb"
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
-project = "qm9_schnet_original"
+project = "qm9_schnet_improved"
 group = "qm_schnet_normTrue"
 log_model = true
 job_type = "benchmarking"
 tags = ['qm9', 'schnet', 'energy', 'force', 'norm_True']
-notes = "ps124_ds43_lr0.0001_normTrue_rbf64; training of schnet on qm9 with energy and force"
+notes = "ps124_ds43_lr0.0001_normTrue_rbf64; training of schnet on qm9 with energy and force and 64 radial_basis functions"
 # ------------------------------------------------------------ #
 [training.lr_scheduler]
 scheduler_name = "ReduceLROnPlateau"
