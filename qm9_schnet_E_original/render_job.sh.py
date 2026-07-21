@@ -65,8 +65,8 @@ if __name__ == "__main__":
                 ## define training parameters
                 training_parameters = {
                     "dataset_splitting_seed": dataset_set,
-                    "project": "qm9_schnet_original",
-                    "group": "qm_schnet_normTrue",
+                    "project": "qm9_schnet_original_E",
+                    "group": f"qm_schnet_norm{str(normalize)}",
                     "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}"],
                     "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy",
                     "initial_lr": initial_lr,

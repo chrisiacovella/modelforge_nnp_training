@@ -77,7 +77,7 @@ gradient_clip_val = 5
 logger_name = "wandb"
 [training.experiment_logger.wandb_configuration]
 save_dir = "logs"
-project = "qm9_schnet_original"
+project = "qm9_schnet_original_E"
 group = "qm_schnet_normTrue"
 log_model = true
 job_type = "benchmarking"
