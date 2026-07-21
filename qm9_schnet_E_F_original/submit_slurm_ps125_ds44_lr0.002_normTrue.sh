@@ -25,7 +25,7 @@ env | sort | grep 'CUDA'
 nvidia-smi
 
 # Activate environment
-micromamba activate test
+micromamba activate modelforge
 
 # Execute the python command
 cd $SLURM_SUBMIT_DIR

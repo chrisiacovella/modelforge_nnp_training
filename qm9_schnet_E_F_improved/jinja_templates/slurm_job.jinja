@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=ps123_ds42_lr0.001_normFalse_qm9_schnet
+#SBATCH --job-name={{ job_name }}
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -25,10 +25,10 @@ env | sort | grep 'CUDA'
 nvidia-smi
 
 # Activate environment
-micromamba activate modelforge
+micromamba activate test
 
 # Execute the python command
 cd $SLURM_SUBMIT_DIR
 pwd
-echo "python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps123_ds42_lr0.001_normFalse.toml --accelerator 'gpu' --device [0]"
-srun python ../../modelforge/scripts/perform_training.py --condensed_config_path config_ps123_ds42_lr0.001_normFalse.toml --accelerator 'gpu' --device [0]
+echo "{{ python_cmd }}"
+srun {{ python_cmd }}
