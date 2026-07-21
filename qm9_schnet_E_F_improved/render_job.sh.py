@@ -48,7 +48,7 @@ if __name__ == "__main__":
     experiments = {}
     for normalize in [True]:
         for radial_basis_functions in [64, 128]:
-            for initial_lr in [5e-3, 2e-3, 1e-3, 5e-4, 1e-4]:
+            for initial_lr in [0.01, 5e-3, 2e-3, 1e-3, 5e-4, 1e-4]:
                 for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
 
                     # create a run_id based on the seeds, used for defining the local cache dir
