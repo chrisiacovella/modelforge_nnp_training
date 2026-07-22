@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sbatch submit_slurm_ps123_ds42_lr0.01_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.01_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.01_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.005_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.005_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.005_normTrue.sh
+sbatch submit_slurm_ps123_ds42_lr0.001_normTrue.sh
+sbatch submit_slurm_ps124_ds43_lr0.001_normTrue.sh
+sbatch submit_slurm_ps125_ds44_lr0.001_normTrue.sh
