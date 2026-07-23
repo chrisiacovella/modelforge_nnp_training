@@ -67,7 +67,7 @@ if __name__ == "__main__":
                         ## define training parameters
                         training_parameters = {
                             "dataset_splitting_seed": dataset_set,
-                            "project": "qm9_schnet_original_E_v1",
+                            "project": "qm9_schnet_original_E_v2",
                             "group": "qm_schnet_normTrue",
                             "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}", "force_{str(force_loss_weight)}", f"lr_{str(initial_lr)}", f"threshold_{str(lr_scheduler_threshold)}"],
                             "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and force with loss {force_loss_weight} and threshold {lr_scheduler_threshold}",
