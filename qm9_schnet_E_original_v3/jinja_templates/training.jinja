@@ -1,0 +1,50 @@
+[training]
+number_of_epochs = 500
+remove_self_energies = true
+batch_size = 32
+lr = {{ initial_lr }}
+monitor = "val/per_system_energy/rmse"
+shift_center_of_mass_to_origin = true
+log_norm = false
+plot_frequency = 1
+gradient_clip_val = 1
+# ------------------------------------------------------------ #
+[training.experiment_logger]
+logger_name = "wandb"
+[training.experiment_logger.wandb_configuration]
+save_dir = "logs"
+project = {{ project }}
+group = {{ group }}
+log_model = true
+job_type = "benchmarking"
+tags = {{ tags }}
+notes = {{ notes }}
+# ------------------------------------------------------------ #
+[training.lr_scheduler]
+scheduler_name = "ReduceLROnPlateau"
+frequency = 1
+mode = "min"
+monitor = "val/per_system_energy/rmse"
+factor = 0.96
+patience = 20
+cooldown = 10
+min_lr = 1e-8
+threshold = 0.01
+threshold_mode = "abs"
+interval = "epoch"
+# ------------------------------------------------------------ #
+[training.loss_parameter]
+loss_components = ['per_system_energy']
+[training.loss_parameter.weight]
+per_system_energy = 1
+# ------------------------------------------------------------ #
+[training.early_stopping]
+verbose = true
+min_delta = 0.001
+patience = 50
+# ------------------------------------------------------------ #
+[training.splitting_strategy]
+name = "random_record_splitting_strategy"
+data_split = [0.82505135, {{ split_val }}, {{ split_test }}]
+seed = {{ dataset_splitting_seed }}
+# ------------------------------------------------------------ #
