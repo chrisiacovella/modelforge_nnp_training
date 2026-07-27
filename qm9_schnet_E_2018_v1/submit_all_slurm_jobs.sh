@@ -1,0 +1,20 @@
+#!/bin/bash
+
+sbatch submit_slurm_ps123_ds42_lr0.0001_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps124_ds43_lr0.0001_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps125_ds44_lr0.0001_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps123_ds42_lr0.0005_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps123_ds42_lr1000.0_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps124_ds43_lr1000.0_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps125_ds44_lr1000.0_normTrue_threshold0.01.sh
+sbatch submit_slurm_ps123_ds42_lr0.0001_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps124_ds43_lr0.0001_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps125_ds44_lr0.0001_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps123_ds42_lr0.0005_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps123_ds42_lr1000.0_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps124_ds43_lr1000.0_normTrue_threshold0.001.sh
+sbatch submit_slurm_ps125_ds44_lr1000.0_normTrue_threshold0.001.sh
