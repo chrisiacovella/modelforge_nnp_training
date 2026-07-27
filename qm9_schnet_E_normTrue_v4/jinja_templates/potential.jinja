@@ -6,7 +6,7 @@ potential_seed = {{ potential_seed }}
 number_of_radial_basis_functions = 51
 maximum_interaction_radius = "5.0 angstrom"
 number_of_interaction_modules = 6
-number_of_filters = 128
+number_of_filters = {{ number_of_filters }}
 shared_interactions = true
 predicted_properties = ["per_atom_energy"]
 predicted_dim = [1]
@@ -18,7 +18,7 @@ properties_to_featurize = ['atomic_number']
 # ------------------------------------------------------------ #
 [potential.core_parameter.featurization.atomic_number]
 maximum_atomic_number = 101
-number_of_per_atom_features = 128
+number_of_per_atom_features = {{ number_of_per_atom_features }}
 # ------------------------------------------------------------ #
 [potential.postprocessing_parameter]
 properties_to_process = ['per_atom_energy']
