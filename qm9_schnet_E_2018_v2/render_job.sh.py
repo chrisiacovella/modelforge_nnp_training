@@ -46,13 +46,13 @@ if __name__ == "__main__":
 
     file_names = []
     experiments = {}
-    for normalize in [True]:
-        for initial_lr in [1e-3, 5e-4]:
-            for lr_scheduler_factor in [0.9, 0.75, 0.5]:
+    for lr_scheduler_threshold in [0.01, 0.001]:
+        for normalize in [True]:
+            for initial_lr in [1e-4, 5e-4, 1e3]:
                 for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
 
                     # create a run_id based on the seeds, used for defining the local cache dir
-                    run_id = f"ps{potential_seed}_ds{dataset_set}_lr{initial_lr}_norm{str(normalize)}"
+                    run_id = f"ps{potential_seed}_ds{dataset_set}_lr{initial_lr}_norm{str(normalize)}_threshold{str(lr_scheduler_threshold)}"
 
                     ## define dataset parameters
                     dataset_parameters = {"dataset_cache_dir": "../dataset_cache_dir"}
@@ -66,12 +66,12 @@ if __name__ == "__main__":
                     ## define training parameters
                     training_parameters = {
                         "dataset_splitting_seed": dataset_set,
-                        "project": "qm9_schnet_E_normTrue_v3",
+                        "project": "qm9_schnet_E_2018_v1",
                         "group": "qm_schnet_normTrue",
-                        "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}", f"sched_factor{lr_scheduler_factor}", f"lr_{initial_lr}"],
-                        "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy only",
+                        "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}", f"lr_{str(initial_lr)}", f"threshold_{str(lr_scheduler_threshold)}"],
+                        "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and threshold {lr_scheduler_threshold}",
                         "initial_lr": initial_lr,
-                        "lr_scheduler_factor": lr_scheduler_factor
+                        "lr_scheduler_threshold": lr_scheduler_threshold
                     }
 
                     ## define runtime parameters

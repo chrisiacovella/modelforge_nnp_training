@@ -1,5 +1,5 @@
 [training]
-number_of_epochs = 500
+number_of_epochs = 1000
 remove_self_energies = true
 batch_size = 32
 lr = {{ initial_lr }}
@@ -8,6 +8,7 @@ shift_center_of_mass_to_origin = true
 log_norm = false
 plot_frequency = 1
 gradient_clip_val = 5
+
 # ------------------------------------------------------------ #
 [training.experiment_logger]
 logger_name = "wandb"
@@ -34,17 +35,17 @@ threshold_mode = "abs"
 interval = "epoch"
 # ------------------------------------------------------------ #
 [training.loss_parameter]
-loss_components = ['per_atom_energy']
+loss_components = ['per_system_energy']
 [training.loss_parameter.weight]
-per_atom_energy = 1
+per_system_energy = 1
 # ------------------------------------------------------------ #
 [training.early_stopping]
 verbose = true
-min_delta = 0.1
+min_delta = 0.001
 patience = 50
 # ------------------------------------------------------------ #
 [training.splitting_strategy]
 name = "random_record_splitting_strategy"
-data_split = [0.8, 0.1, 0.1]
+data_split = [0.84, 0.076, 0.084]
 seed = {{ dataset_splitting_seed }}
 # ------------------------------------------------------------ #

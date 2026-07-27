@@ -3,10 +3,10 @@ potential_name = "SchNet"
 potential_seed = {{ potential_seed }}
 # ------------------------------------------------------------ #
 [potential.core_parameter]
-number_of_radial_basis_functions = 51
-maximum_interaction_radius = "5.0 angstrom"
+number_of_radial_basis_functions = 201
+maximum_interaction_radius = "20.0 angstrom"
 number_of_interaction_modules = 6
-number_of_filters = 128
+number_of_filters = 64
 shared_interactions = true
 predicted_properties = ["per_atom_energy"]
 predicted_dim = [1]
@@ -18,7 +18,7 @@ properties_to_featurize = ['atomic_number']
 # ------------------------------------------------------------ #
 [potential.core_parameter.featurization.atomic_number]
 maximum_atomic_number = 101
-number_of_per_atom_features = 128
+number_of_per_atom_features = 64
 # ------------------------------------------------------------ #
 [potential.postprocessing_parameter]
 properties_to_process = ['per_atom_energy']
