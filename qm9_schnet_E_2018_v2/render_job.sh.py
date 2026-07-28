@@ -46,128 +46,131 @@ if __name__ == "__main__":
 
     file_names = []
     experiments = {}
-    for lr_scheduler_threshold in [0.01, 0.001]:
+    for lr_scheduler_factor in [0.9, 0.7, 0.5]:
         for normalize in [True]:
-            for initial_lr in [1e-4, 5e-4, 1e3]:
-                for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
+            for initial_lr in [5e-4, 1e-3]:
+                for number_of_filters in [64, 128, 256]:
+                    for potential_seed, dataset_set in [(123, 42), (124, 43), (125, 44)]:
 
-                    # create a run_id based on the seeds, used for defining the local cache dir
-                    run_id = f"ps{potential_seed}_ds{dataset_set}_lr{initial_lr}_norm{str(normalize)}_threshold{str(lr_scheduler_threshold)}"
+                        # create a run_id based on the seeds, used for defining the local cache dir
+                        run_id = f"ps{potential_seed}_ds{dataset_set}_lr{initial_lr}_norm{str(normalize)}_lr_factor{str(lr_scheduler_factor)}_nfilters{str(number_of_filters)}"
 
-                    ## define dataset parameters
-                    dataset_parameters = {"dataset_cache_dir": "../dataset_cache_dir"}
+                        ## define dataset parameters
+                        dataset_parameters = {"dataset_cache_dir": "../dataset_cache_dir"}
 
-                    ## define potential parameters
-                    potential_parameters = {
-                        "potential_seed": potential_seed,
-                        "normalize": normalize,
-                    }
+                        ## define potential parameters
+                        potential_parameters = {
+                            "potential_seed": potential_seed,
+                            "normalize": normalize,
+                            "number_of_filters": number_of_filters
+                        }
 
-                    ## define training parameters
-                    training_parameters = {
-                        "dataset_splitting_seed": dataset_set,
-                        "project": "qm9_schnet_E_2018_v1",
-                        "group": "qm_schnet_normTrue",
-                        "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}", f"lr_{str(initial_lr)}", f"threshold_{str(lr_scheduler_threshold)}"],
-                        "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and threshold {lr_scheduler_threshold}",
-                        "initial_lr": initial_lr,
-                        "lr_scheduler_threshold": lr_scheduler_threshold
-                    }
+                        ## define training parameters
+                        training_parameters = {
+                            "dataset_splitting_seed": dataset_set,
+                            "project": "qm9_schnet_E_2018_v2",
+                            "group": "qm_schnet_normTrue",
+                            "tags": ["qm9", "schnet", "energy", f"norm_{str(normalize)}", f"lr_{str(initial_lr)}", f"threshold_{str(lr_scheduler_factor)}"],
+                            "notes": f"{run_id}; training of {potential_name} on {dataset_name} with energy and lr_scale factor {lr_scheduler_factor}",
+                            "initial_lr": initial_lr,
+                            "lr_scheduler_threshold": 0.1,
+                            "lr_scheduler_factor": lr_scheduler_factor
+                        }
 
-                    ## define runtime parameters
-                    runtime_parameters = {
-                        "experiment_name": f"{experiment_base_name}_{run_id}",
-                        "local_cache_dir": f"./cache_{run_id}",
-                        "normalize": normalize,
-                        "initial_lr": initial_lr,
-                    }
+                        ## define runtime parameters
+                        runtime_parameters = {
+                            "experiment_name": f"{experiment_base_name}_{run_id}",
+                            "local_cache_dir": f"./cache_{run_id}",
+                            "normalize": normalize,
+                            "initial_lr": initial_lr,
+                        }
 
-                    # render the various config files
-                    dataset_config = render_file(
-                        environment=env,
-                        template_path=dataset_template,
-                        data=dataset_parameters,
-                    )
-                    potential_config = render_file(
-                        environment=env,
-                        template_path=potential_template,
-                        data=potential_parameters,
-                    )
-                    training_config = render_file(
-                        environment=env,
-                        template_path=training_template,
-                        data=training_parameters,
-                    )
-                    runtime_config = render_file(
-                        environment=env,
-                        template_path=runtime_template,
-                        data=runtime_parameters,
-                    )
+                        # render the various config files
+                        dataset_config = render_file(
+                            environment=env,
+                            template_path=dataset_template,
+                            data=dataset_parameters,
+                        )
+                        potential_config = render_file(
+                            environment=env,
+                            template_path=potential_template,
+                            data=potential_parameters,
+                        )
+                        training_config = render_file(
+                            environment=env,
+                            template_path=training_template,
+                            data=training_parameters,
+                        )
+                        runtime_config = render_file(
+                            environment=env,
+                            template_path=runtime_template,
+                            data=runtime_parameters,
+                        )
 
-                    ## merge all of the config files into one text block
-                    condensed_config = (
-                        f"# ============================================================ #\n\n"
-                        f"{dataset_config}"
-                        f"\n\n# ============================================================ #\n\n"
-                        f"{potential_config}"
-                        f"\n\n# ============================================================ #\n\n"
-                        f"{runtime_config}"
-                        f"\n\n# ============================================================ #\n\n"
-                        f"{training_config}"
-                        f"\n\n# ============================================================ #\n"
-                    )
-                    condensed_config_file = f"config_{run_id}.toml"
+                        ## merge all of the config files into one text block
+                        condensed_config = (
+                            f"# ============================================================ #\n\n"
+                            f"{dataset_config}"
+                            f"\n\n# ============================================================ #\n\n"
+                            f"{potential_config}"
+                            f"\n\n# ============================================================ #\n\n"
+                            f"{runtime_config}"
+                            f"\n\n# ============================================================ #\n\n"
+                            f"{training_config}"
+                            f"\n\n# ============================================================ #\n"
+                        )
+                        condensed_config_file = f"config_{run_id}.toml"
 
-                    with open(condensed_config_file, "w") as f:
-                        f.write(condensed_config)
+                        with open(condensed_config_file, "w") as f:
+                            f.write(condensed_config)
 
-                    python_cmd = (
-                        f"python ../../modelforge/scripts/perform_training.py "
-                        f"--condensed_config_path config_{run_id}.toml "
-                        f"--accelerator 'gpu' --device [0]"
-                    )
-                    #
-                    slurm_script = render_file(
-                        env,
-                        slurm_template,
-                        {
-                            "job_name": f"{run_id}_{dataset_name}_{potential_name}",
-                            "python_cmd": python_cmd,
-                        },
-                        add_quotes=False,
-                    )
-                    submit_slurm = f"submit_slurm_{run_id}.sh"
-                    file_names.append(submit_slurm)
+                        python_cmd = (
+                            f"python ../../modelforge/scripts/perform_training.py "
+                            f"--condensed_config_path config_{run_id}.toml "
+                            f"--accelerator 'gpu' --device [0]"
+                        )
+                        #
+                        slurm_script = render_file(
+                            env,
+                            slurm_template,
+                            {
+                                "job_name": f"{run_id}_{dataset_name}_{potential_name}",
+                                "python_cmd": python_cmd,
+                            },
+                            add_quotes=False,
+                        )
+                        submit_slurm = f"submit_slurm_{run_id}.sh"
+                        file_names.append(submit_slurm)
 
-                    with open(submit_slurm, "w+") as f:
-                        f.write(slurm_script)
+                        with open(submit_slurm, "w+") as f:
+                            f.write(slurm_script)
 
-                    # import the training_config as toml file into dictionary
-                    # so we can extract the loss parameters for the readme file
-                    import toml
+                        # import the training_config as toml file into dictionary
+                        # so we can extract the loss parameters for the readme file
+                        import toml
 
-                    # print(training_config)
+                        # print(training_config)
 
-                    training_config_dict = toml.loads(training_config)
+                        training_config_dict = toml.loads(training_config)
 
-                    loss_components = training_config_dict["training"]["loss_parameter"][
-                        "loss_components"
-                    ]
-                    for l in loss_components:
-                        l.replace("'", "`")
+                        loss_components = training_config_dict["training"]["loss_parameter"][
+                            "loss_components"
+                        ]
+                        for l in loss_components:
+                            l.replace("'", "`")
 
-                    loss_weights = training_config_dict["training"]["loss_parameter"][
-                        "weight"
-                    ]
-                    for l in loss_weights:
-                        l.replace("'", "`")
+                        loss_weights = training_config_dict["training"]["loss_parameter"][
+                            "weight"
+                        ]
+                        for l in loss_weights:
+                            l.replace("'", "`")
 
-                    experiments[runtime_parameters["experiment_name"]] = {
-                        "experiment_name": runtime_parameters["experiment_name"],
-                        "config_file": condensed_config_file,
-                        "loss_components": loss_components,
-                        "loss_weights": loss_weights,
-                    }
+                        experiments[runtime_parameters["experiment_name"]] = {
+                            "experiment_name": runtime_parameters["experiment_name"],
+                            "config_file": condensed_config_file,
+                            "loss_components": loss_components,
+                            "loss_weights": loss_weights,
+                        }
 
     # auto generate the README file using the
     readme_content = render_file(
