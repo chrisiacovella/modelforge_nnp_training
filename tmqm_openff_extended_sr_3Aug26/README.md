@@ -7,7 +7,7 @@ tmqm_openff
 Description:
 ------------
 
-Training of aimnet2 with tmqm_openff looking at data sacaling
+Training of aimnet2 with tmqm_openff looking at hyperparameters for spin resolved charge model
 
 Experiments:
 ------------
