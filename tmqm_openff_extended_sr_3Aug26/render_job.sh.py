@@ -12,6 +12,11 @@ def render_file(
         for key, value in data.items():
             if isinstance(value, str):
                 data[key] = f'"{value}"'
+    # convert any bool to lowercase for the .toml file
+    for key, value in data.items():
+        if isinstance(value, bool):
+            data[key] = str(value).lower()
+
     return template.render(data)
 
 
