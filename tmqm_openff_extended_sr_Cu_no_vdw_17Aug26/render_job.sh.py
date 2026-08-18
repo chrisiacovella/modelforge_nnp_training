@@ -92,7 +92,7 @@ if __name__ == "__main__":
                                     ## define training parameters
                                     training_parameters = {
                                         "dataset_splitting_seed": dataset_set,
-                                        "project": "tmqm_openff_sr_Cu_v1",
+                                        "project": "tmqm_openff_sr_Cu_v2",
                                         "per_atom_force_loss_weight": force_loss,
                                         "group": f"{dataset_name}_{potential_name}_all",
                                         "loss_components": loss_components,
