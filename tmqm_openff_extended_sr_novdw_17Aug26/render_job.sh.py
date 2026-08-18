@@ -51,7 +51,7 @@ if __name__ == "__main__":
         for force_loss in [0.001]:
             for learning_rate in [1e-4]:
                 for normalize in [True, False]:
-                    for number_of_radial_basis_functions in  [64]:
+                    for number_of_radial_basis_functions in [64]:
                         for number_of_vector_features in [16]:
                             for number_of_per_atom_features in [128]:
                                 for potential_seed, dataset_set in [(1234, 425), (1345, 435)]:
@@ -78,7 +78,7 @@ if __name__ == "__main__":
                                     ## define training parameters
                                     training_parameters = {
                                         "dataset_splitting_seed": dataset_set,
-                                        "project": "tmqm_openff_sr_v3",
+                                        "project": "tmqm_openff_sr_v4",
                                         "per_atom_force_loss_weight": force_loss,
                                         "group": f"{dataset_name}_{potential_name}_all",
                                         "learning_rate": learning_rate,
