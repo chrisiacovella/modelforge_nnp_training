@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sbatch submit_slurm_all_dataset_v1.4_3sep26_ps1234_ds425_fl0.001_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.sh
+sbatch submit_slurm_all_dataset_v1.4_3sep26_ps1345_ds435_fl0.001_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.sh
