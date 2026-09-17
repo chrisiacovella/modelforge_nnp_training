@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sbatch submit_slurm_ps123_ds42_lr0.0005_normTrue_lr_factor0.5_nfilters64.sh
+sbatch submit_slurm_ps124_ds43_lr0.0005_normTrue_lr_factor0.5_nfilters64.sh
+sbatch submit_slurm_ps125_ds44_lr0.0005_normTrue_lr_factor0.5_nfilters64.sh

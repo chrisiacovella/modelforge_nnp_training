@@ -1,0 +1,13 @@
+[dataset]
+dataset_name = "geom_qm9"
+version_select = "full_dataset_v1.0"
+num_workers = 4
+pin_memory = true
+properties_of_interest = ["atomic_numbers", "positions", "dft_total_energy"]
+element_filter = []
+dataset_cache_dir = {{ dataset_cache_dir }}
+# ------------------------------------------------------------ #
+[dataset.properties_assignment]
+atomic_numbers = "atomic_numbers"
+positions = "positions"
+E = "dft_total_energy"
