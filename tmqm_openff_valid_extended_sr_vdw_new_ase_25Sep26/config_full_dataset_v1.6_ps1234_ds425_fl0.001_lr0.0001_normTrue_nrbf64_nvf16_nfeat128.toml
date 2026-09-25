@@ -5,7 +5,7 @@ dataset_name = "tmqm_openff_local"
 version_select = "full_dataset_v1.6"
 num_workers = 4
 pin_memory = true
-properties_of_interest = ["atomic_numbers", "positions", "dft_total_force", "dft_total_energy", "dft_total_energy_corrected", "scf_dipole", "total_charge", "lowdin_partial_charges", "mulliken_partial_charges", "per_system_spin_multiplicity"]
+properties_of_interest = ["atomic_numbers", "positions", "dft_total_force", "dft_total_energy", "dft_energy_corrected_new", "scf_dipole", "total_charge", "lowdin_partial_charges", "mulliken_partial_charges", "per_system_spin_multiplicity"]
 element_filter = []
 local_yaml_file = "/data1/choderaj/iacovec/training_test/dataset/v1.5/tmqm_openff_local.yaml"
 dataset_cache_dir = "/data1/choderaj/iacovec/training_test/dataset"
@@ -13,7 +13,7 @@ dataset_cache_dir = "/data1/choderaj/iacovec/training_test/dataset"
 [dataset.properties_assignment]
 atomic_numbers = "atomic_numbers"
 positions = "positions"
-E = "dft_total_energy_corrected"
+E = "dft_energy_corrected_new"
 F = "dft_total_force"
 dipole_moment = "scf_dipole"
 partial_charges = "lowdin_partial_charges"
@@ -47,7 +47,7 @@ maximum_atomic_number = 101
 number_of_per_atom_features = 128
 
 [potential.postprocessing_parameter]
-properties_to_process = ['per_atom_energy', "sum_per_system_energy", 'per_system_vdw_energy']
+properties_to_process = ['per_atom_energy', "sum_per_system_energy"]
 
 [potential.postprocessing_parameter.per_atom_energy]
 normalize = true
@@ -65,7 +65,7 @@ d3_engine = "tad-dftd3"
 maximum_interaction_radius = "15.0 angstrom"
 
 [potential.postprocessing_parameter.sum_per_system_energy]
-contributions = ['per_system_electrostatic_energy', 'per_system_vdw_energy']
+contributions = ['per_system_electrostatic_energy']
 
 # ============================================================ #
 
