@@ -20,7 +20,7 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 10000.0
+  - loss component: `per_system_dipole_moment` : weight = 10.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -41,7 +41,7 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 10000.0
+  - loss component: `per_system_dipole_moment` : weight = 10.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -62,7 +62,7 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 10000.0
+  - loss component: `per_system_dipole_moment` : weight = 10.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -83,7 +83,7 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 10000.0
+  - loss component: `per_system_dipole_moment` : weight = 10.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
