@@ -39,13 +39,13 @@ loss_components = ['per_system_energy', 'per_system_dipole_moment', 'per_atom_ch
 per_system_energy = 0.01
 per_system_dipole_moment = 10.0
 per_atom_charge = 0.01
-per_atom_force = 0
+#per_atom_force = 0
 # ------------------------------------------------------------ #
-[training.loss_parameter.target_weight]
-per_atom_force = {{ per_atom_force_loss_weight }}
+#[training.loss_parameter.target_weight]
+#per_atom_force = {{ per_atom_force_loss_weight }}
 
-[training.loss_parameter.mixing_steps]
-per_atom_force= 0.00001
+#[training.loss_parameter.mixing_steps]
+#per_atom_force= 0.00001
 
 # ------------------------------------------------------------ #
 [training.early_stopping]

@@ -28,10 +28,6 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_atom_force` : weight = 0
-    - MAE of test set: [[ ]]
-    - RMSE of test set: [[ ]]
-  
   - WandB link: [[ ]]
 
 - "tmqm_openff_full_dataset_v1.6_ps1345_ds435_fl0.001_lr0.0001_normFalse_nrbf64_nvf16_nfeat128"
@@ -46,10 +42,6 @@ Experiments:
     - RMSE of test set: [[ ]]
   
   - loss component: `per_atom_charge` : weight = 0.01
-    - MAE of test set: [[ ]]
-    - RMSE of test set: [[ ]]
-  
-  - loss component: `per_atom_force` : weight = 0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -70,10 +62,6 @@ Experiments:
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_atom_force` : weight = 0
-    - MAE of test set: [[ ]]
-    - RMSE of test set: [[ ]]
-  
   - WandB link: [[ ]]
 
 - "tmqm_openff_full_dataset_v1.6_ps1345_ds435_fl0.001_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
@@ -88,10 +76,6 @@ Experiments:
     - RMSE of test set: [[ ]]
   
   - loss component: `per_atom_charge` : weight = 0.01
-    - MAE of test set: [[ ]]
-    - RMSE of test set: [[ ]]
-  
-  - loss component: `per_atom_force` : weight = 0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
