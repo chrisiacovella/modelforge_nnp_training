@@ -37,7 +37,7 @@ interval = "epoch"
 loss_components = ['per_system_energy', 'per_system_dipole_moment', 'per_atom_charge'] # 'per_atom_force']
 [training.loss_parameter.weight]
 per_system_energy = 1
-per_system_dipole_moment = 0.0
+per_system_dipole_moment = {{per_system_dipole_moment_weight}}
 per_atom_charge = 0.0
 #per_atom_force = 0
 # ------------------------------------------------------------ #
