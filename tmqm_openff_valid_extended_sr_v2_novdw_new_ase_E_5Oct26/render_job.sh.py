@@ -49,10 +49,10 @@ if __name__ == "__main__":
 
     for version_select in versions:
         for force_loss in [0.0]:
-            for per_system_dipole_moment_weight in [0.0, 0.1]:
+            for per_system_dipole_moment_weight in [0.0, 1.0]:
                 for learning_rate in [1e-4]:
                     for normalize in [True]:
-                        for batch_size in [32, 64]:
+                        for batch_size in [32, 128]:
                             for number_of_radial_basis_functions in [64]:
                                 for number_of_vector_features in [16]:
                                     for number_of_per_atom_features in [128]:

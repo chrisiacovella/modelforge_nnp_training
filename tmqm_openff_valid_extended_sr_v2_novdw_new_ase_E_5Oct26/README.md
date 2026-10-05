@@ -47,8 +47,8 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs64_full_dataset_v1.6_c_ps1234_ds425_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs64_full_dataset_v1.6_c_ps1234_ds425_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs128_full_dataset_v1.6_c_ps1234_ds425_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs128_full_dataset_v1.6_c_ps1234_ds425_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
@@ -64,8 +64,8 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs64_full_dataset_v1.6_c_ps1345_ds435_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs64_full_dataset_v1.6_c_ps1345_ds435_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs128_full_dataset_v1.6_c_ps1345_ds435_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs128_full_dataset_v1.6_c_ps1345_ds435_m0.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
@@ -81,14 +81,14 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs32_full_dataset_v1.6_c_ps1234_ds425_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs32_full_dataset_v1.6_c_ps1234_ds425_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs32_full_dataset_v1.6_c_ps1234_ds425_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs32_full_dataset_v1.6_c_ps1234_ds425_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 0.1
+  - loss component: `per_system_dipole_moment` : weight = 1.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -98,14 +98,14 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs32_full_dataset_v1.6_c_ps1345_ds435_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs32_full_dataset_v1.6_c_ps1345_ds435_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs32_full_dataset_v1.6_c_ps1345_ds435_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs32_full_dataset_v1.6_c_ps1345_ds435_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 0.1
+  - loss component: `per_system_dipole_moment` : weight = 1.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -115,14 +115,14 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs64_full_dataset_v1.6_c_ps1234_ds425_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs64_full_dataset_v1.6_c_ps1234_ds425_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs128_full_dataset_v1.6_c_ps1234_ds425_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs128_full_dataset_v1.6_c_ps1234_ds425_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 0.1
+  - loss component: `per_system_dipole_moment` : weight = 1.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
@@ -132,14 +132,14 @@ Experiments:
   
   - WandB link: [[ ]]
 
-- "tmqm_openff_E_bs64_full_dataset_v1.6_c_ps1345_ds435_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
-  - Modelforge Configuration file: [exp.config_file](./config_E_bs64_full_dataset_v1.6_c_ps1345_ds435_m0.1_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
+- "tmqm_openff_E_bs128_full_dataset_v1.6_c_ps1345_ds435_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128"
+  - Modelforge Configuration file: [exp.config_file](./config_E_bs128_full_dataset_v1.6_c_ps1345_ds435_m1.0_lr0.0001_normTrue_nrbf64_nvf16_nfeat128.toml)
   
   - loss component: `per_system_energy` : weight = 1
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
-  - loss component: `per_system_dipole_moment` : weight = 0.1
+  - loss component: `per_system_dipole_moment` : weight = 1.0
     - MAE of test set: [[ ]]
     - RMSE of test set: [[ ]]
   
