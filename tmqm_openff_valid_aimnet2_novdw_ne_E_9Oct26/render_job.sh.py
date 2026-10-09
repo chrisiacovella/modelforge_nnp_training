@@ -50,17 +50,17 @@ if __name__ == "__main__":
     for version_select in versions:
         for force_loss in [0.0]:
             for per_system_dipole_moment_weight in [0.0, 1.0]:
-                for number_of_charge_channels in [1,2]:
-                    for learning_rate in [1e-4]:
-                        for normalize in [True]:
-                            for batch_size in [32, 128]:
-                                for number_of_radial_basis_functions in [64]:
-                                    for number_of_vector_features in [16, 32]:
-                                        for number_of_per_atom_features in [128]:
+                for learning_rate in [1e-4]:
+                    for normalize in [True]:
+                        for batch_size in [32, 128]:
+                            for number_of_radial_basis_functions in [64]:
+                                for number_of_vector_features in [16]:
+                                    for number_of_per_atom_features in [128]:
+                                        for number_of_charge_channels in [0,1]:
                                             for potential_seed, dataset_set in [(1234, 425), (1345, 435)]:
 
                                                 # create a run_id based on the seeds, used for defining the local cache dir
-                                                run_id = f"E_bs{batch_size}_{version_select}_ps{potential_seed}_ds{dataset_set}_m{per_system_dipole_moment_weight}_lr{learning_rate}_norm{normalize}_nrbf{number_of_radial_basis_functions}_nvf{number_of_vector_features}_nfeat{number_of_per_atom_features}"
+                                                run_id = f"E_bs{batch_size}_{version_select}_ps{potential_seed}_ds{dataset_set}_m{per_system_dipole_moment_weight}_lr{learning_rate}_norm{normalize}_nrbf{number_of_radial_basis_functions}_nvf{number_of_vector_features}_nfeat{number_of_per_atom_features}_ncc{number_of_charge_channels}_floss{force_loss}"
 
                                                 ## define dataset parameters
                                                 dataset_parameters = {
@@ -74,6 +74,7 @@ if __name__ == "__main__":
                                                                         "number_of_vector_features": number_of_vector_features,
                                                                         "number_of_per_atom_features": number_of_per_atom_features,
                                                                         "normalize": normalize,
+                                                                        "number_of_charge_channels": number_of_charge_channels,
 
                                                 }
 
@@ -81,7 +82,7 @@ if __name__ == "__main__":
                                                 ## define training parameters
                                                 training_parameters = {
                                                     "dataset_splitting_seed": dataset_set,
-                                                    "project": "tmqm_openff_sr_v2_new_ase_E_5Oct26",
+                                                    "project": "tmqm_openff_aimnet2_E_9Oct26",
                                                     "per_atom_force_loss_weight": force_loss,
                                                     "per_system_dipole_moment_weight": per_system_dipole_moment_weight,
                                                     "group": f"{dataset_name}_{potential_name}_all",
@@ -97,7 +98,8 @@ if __name__ == "__main__":
                                                         f"n_rbf: {number_of_radial_basis_functions}",
                                                         f"n_vf: {number_of_vector_features}",
                                                         f"n_feat: {number_of_per_atom_features}",
-                                                        "all",
+                                                        f"n_cc: {number_of_charge_channels}",
+                                                        f"all",
                                                     ],
                                                     "notes": f"{run_id}; training of {potential_name} on {dataset_name} with version {version_select}",
                                                 }
