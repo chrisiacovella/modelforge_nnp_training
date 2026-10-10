@@ -56,7 +56,7 @@ if __name__ == "__main__":
                             for number_of_radial_basis_functions in [64]:
                                 for number_of_vector_features in [16]:
                                     for number_of_per_atom_features in [128]:
-                                        for number_of_charge_channels in [0,1]:
+                                        for number_of_charge_channels in [1,2]:
                                             for potential_seed, dataset_set in [(1234, 425), (1345, 435)]:
 
                                                 # create a run_id based on the seeds, used for defining the local cache dir
