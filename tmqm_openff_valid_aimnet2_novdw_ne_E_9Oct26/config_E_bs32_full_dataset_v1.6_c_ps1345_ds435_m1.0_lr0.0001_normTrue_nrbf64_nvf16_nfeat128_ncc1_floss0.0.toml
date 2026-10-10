@@ -42,7 +42,7 @@ predicted_dim = [1]
 activation_function_name = "GeLU"
 
 [potential.core_parameter.featurization]
-properties_to_featurize = ['atomic_number', 'per_system_spin_state', 'per_system_total_charge']
+properties_to_featurize = ['atomic_number', 'per_system_spin_multiplicity', 'per_system_total_charge']
 [potential.core_parameter.featurization.atomic_number]
 maximum_atomic_number = 101
 number_of_per_atom_features = 128
