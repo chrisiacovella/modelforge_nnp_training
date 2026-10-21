@@ -48,7 +48,7 @@ if __name__ == "__main__":
     ]
 
     for version_select in versions:
-        for force_loss in [0.0, 0.1]:
+        for force_loss in [0.0, 0.01, 0.1]:
             for per_system_dipole_moment_weight in [1000]:
                 for learning_rate in [1e-4]:
                     for normalize in [True]:
