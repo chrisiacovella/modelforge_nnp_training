@@ -1,0 +1,17 @@
+[dataset]
+dataset_name = "spice2"
+version_select = "latest"
+num_workers = 4
+pin_memory = true
+properties_of_interest = ["atomic_numbers", "positions", "dft_total_force", "dft_total_energy", "scf_dipole", "total_charge", "mulliken_partial_charges"]
+element_filter = [[]]
+dataset_cache_dir = {{ dataset_cache_dir }}
+# ------------------------------------------------------------ #
+[dataset.properties_assignment]
+atomic_numbers = "atomic_numbers"
+positions = "positions"
+E = "dft_total_energy"
+F = "dft_total_force"
+dipole_moment = "scf_dipole"
+partial_charges = "mulliken_partial_charges"
+total_charge= "total_charge"
