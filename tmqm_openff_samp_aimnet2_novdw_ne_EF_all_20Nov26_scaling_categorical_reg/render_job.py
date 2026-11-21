@@ -88,7 +88,7 @@ if __name__ == "__main__":
                                                             "dataset_splitting_seed": dataset_set,
                                                             "test_splitting_seed": test_splitting_seed,
                                                             "data_split_fraction": training_fraction,
-                                                            "project": "tmqm_openff_sampled_aimnet2_EF_17Nov26_1hot",
+                                                            "project": "tmqm_openff_sampled_aimnet2_EF_20Nov26_1hot_reg",
                                                             "per_atom_force_loss_weight": force_loss,
                                                             "per_system_dipole_moment_weight": per_system_dipole_moment_weight,
                                                             "group": f"{dataset_name}_{potential_name}_all",
